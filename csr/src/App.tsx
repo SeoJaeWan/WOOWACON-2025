@@ -27,22 +27,23 @@ function App() {
         fake().then(products => setData(products));
     }, []);
 
-    if (!data) {
-        return <div>Loading products...</div>;
-    }
-
     return (
         <>
             <div className="product-container">
                 <h1>Products (CSR)</h1>
-                {data.map(product => (
-                    <div key={product.id} className="product-item">
-                        <h2>{product.title}</h2>
-                        <p>{product.description}</p>
-                        <p className="price">${product.price}</p>
-                    </div>
-                ))}
+                {!data ? (
+                    <div>Loading products...</div>
+                ) : (
+                    data.map(product => (
+                        <div key={product.id} className="product-item">
+                            <h2>{product.title}</h2>
+                            <p>{product.description}</p>
+                            <p className="price">${product.price}</p>
+                        </div>
+                    ))
+                )}
             </div>
+            <WebVitals />
         </>
     );
 }

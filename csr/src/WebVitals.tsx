@@ -18,10 +18,13 @@ export function WebVitals() {
             console.log("✅ FCP:", metric.value, "ms");
         });
 
-        onLCP(metric => {
-            setMetrics(m => ({...m, LCP: metric.value}));
-            console.log("✅ LCP:", metric.value, "ms");
-        });
+        onLCP(
+            metric => {
+                setMetrics(m => ({...m, LCP: metric.value}));
+                console.log("✅ LCP:", metric.value, "ms");
+            },
+            {reportAllChanges: true}
+        );
 
         onCLS(metric => {
             setMetrics(m => ({...m, CLS: metric.value}));

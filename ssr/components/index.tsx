@@ -10,8 +10,12 @@ type Product = {
 const fake = async () => {
     return new Promise(resolve => {
         setTimeout(async () => {
-            resolve((await fetch("https://fakestoreapi.com/products").then(response => response.json())) as Product[]);
-        }, 3000);
+            resolve(
+                (await fetch("https://fakestoreapi.com/products", {
+                    next: {revalidate: 0}
+                }).then(response => response.json())) as Product[]
+            );
+        }, 1000);
     });
 };
 

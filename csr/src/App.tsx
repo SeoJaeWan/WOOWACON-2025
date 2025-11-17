@@ -16,7 +16,7 @@ const fake = async (): Promise<Product[]> => {
             const response = await fetch("https://fakestoreapi.com/products");
             const data = await response.json();
             resolve(data);
-        }, 3000); // 3 second delay
+        }, 1000); // 1 second delay
     });
 };
 

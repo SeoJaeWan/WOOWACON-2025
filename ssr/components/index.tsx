@@ -1,7 +1,7 @@
 import {Product} from "@/lib/products";
 
 const DATA_DELAY_MS = 3000;
-const API_BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3321";
+const API_BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3002";
 
 async function fetchProducts(delayMs: number) {
     const url = new URL("/api/products", API_BASE_URL);

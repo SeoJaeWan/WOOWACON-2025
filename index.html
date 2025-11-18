@@ -146,6 +146,14 @@
             .btn:hover {
                 opacity: 0.9;
             }
+            .btn.secondary {
+                background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            }
+            .button-stack {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
         </style>
     </head>
     <body>
@@ -157,7 +165,7 @@
                 <div class="card">
                     <h2>CSR</h2>
                     <span class="badge csr">Client-Side Rendering</span>
-                    <p>HTML 스켈레톤 + 3초 API 지연. JS 실행 후 데이터 페칭.</p>
+                    <p>3초 API 지연을 가진 두 가지 CSR 버전을 비교해보세요. 스켈레톤 UI의 유무가 FCP 체감에 얼마나 영향을 주는지 확인할 수 있습니다.</p>
 
                     <div class="metrics">
                         <h4>예상 지표</h4>
@@ -168,7 +176,10 @@
                         </ul>
                     </div>
 
-                    <a href="http://localhost:5173" class="btn" target="_blank">CSR 데모 열기</a>
+                    <div class="button-stack">
+                        <a href="http://localhost:2999" class="btn" target="_blank">CSR (+ 스켈레톤) 열기</a>
+                        <a href="http://localhost:2998" class="btn secondary" target="_blank">CSR (스켈레톤 없음) 열기</a>
+                    </div>
                 </div>
 
                 <div class="card">

@@ -1,21 +1,9 @@
-import {Product} from "@/lib/products";
+import {loadProducts, Product} from "@/lib/products";
 
 const DATA_DELAY_MS = 3000;
-const API_BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3001";
-
-async function fetchProducts(delayMs: number) {
-    const url = new URL("/api/products", API_BASE_URL);
-    url.searchParams.set("delay", String(delayMs));
-
-    const res = await fetch(url);
-    if (!res.ok) {
-        throw new Error("Failed to load products");
-    }
-    return (await res.json()) as Product[];
-}
 
 const Products = async () => {
-    const data = await fetchProducts(DATA_DELAY_MS);
+    const data = await loadProducts(DATA_DELAY_MS);
 
     return (
         <>

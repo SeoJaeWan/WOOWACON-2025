@@ -294,7 +294,32 @@ function App() {
             <div className="product-container">
                 <h1>Products (CSR)</h1>
                 {!data ? (
-                    <div>Loading products...</div>
+                    <div>
+                        <div className="skeleton-item">
+                            <div className="skeleton-title"></div>
+                            <div className="skeleton-text"></div>
+                            <div className="skeleton-text"></div>
+                            <div className="skeleton-price"></div>
+                        </div>
+                        <div className="skeleton-item">
+                            <div className="skeleton-title"></div>
+                            <div className="skeleton-text"></div>
+                            <div className="skeleton-text"></div>
+                            <div className="skeleton-price"></div>
+                        </div>
+                        <div className="skeleton-item">
+                            <div className="skeleton-title"></div>
+                            <div className="skeleton-text"></div>
+                            <div className="skeleton-text"></div>
+                            <div className="skeleton-price"></div>
+                        </div>
+                        <div className="skeleton-item">
+                            <div className="skeleton-title"></div>
+                            <div className="skeleton-text"></div>
+                            <div className="skeleton-text"></div>
+                            <div className="skeleton-price"></div>
+                        </div>
+                    </div>
                 ) : (
                     data.map(product => (
                         <div key={product.id} className="product-item">
